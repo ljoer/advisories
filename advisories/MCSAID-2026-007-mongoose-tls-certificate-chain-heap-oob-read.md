@@ -118,7 +118,7 @@ The malformed input is an encrypted TLS 1.3 `Certificate` handshake message sent
 
 Mongoose 7.22 adds bounds validation to the certificate-chain parser so that per-certificate sizes and the overall chain length are checked against the received message length before being used as read offsets.
 
-- Fixed release: Mongoose 7.22 — [github.com/cesanta/mongoose/releases](https://github.com/cesanta/mongoose/releases)
+- Fixed release: Mongoose 7.22 - [github.com/cesanta/mongoose/releases](https://github.com/cesanta/mongoose/releases)
 
 ---
 
