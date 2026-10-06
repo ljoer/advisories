@@ -19,7 +19,7 @@
 
 A malicious TLS server can crash a Mongoose TLS 1.3 client by sending a malformed `Certificate` handshake message. The certificate-chain parser in `mg_tls_recv_cert()` reads a per-certificate length (`certsz`) directly from attacker-controlled message bytes and uses it as an offset to read the two-byte certificate-extensions field, without first checking that the resulting read stays within the decrypted `Certificate` message. The overall `cert_chain_len` is likewise not validated against the actual received length.
 
-Because this parsing happens **before** any certificate verification, the out-of-bounds read is reachable with attacker-supplied, unauthenticated data. A default Mongoose TLS client — with no CA or hostname configured — hits this code path during a normal handshake and reads past the end of the received payload, crashing the client. The vendor notes the same class of flaw can read up to 16 MB of adjacent heap memory, and that the parser is also reachable on the server side when client certificates are requested (mutual TLS).
+Because this parsing happens before any certificate verification, the out-of-bounds read is reachable with attacker-supplied, unauthenticated data. A default Mongoose TLS client, with no CA or hostname configured, hits this code path during a normal handshake and reads past the end of the received payload, crashing the client. The vendor notes the same class of flaw can read up to 16 MB of adjacent heap memory, and that the parser is also reachable on the server side when client certificates are requested (mutual TLS).
 
 ---
 
