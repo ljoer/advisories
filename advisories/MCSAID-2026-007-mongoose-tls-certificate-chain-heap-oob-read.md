@@ -3,7 +3,7 @@
 - **Advisory ID:** MCSAID-2026-XXX
 - **CVE ID:** [CVE-2026-52061](https://www.cve.org/CVERecord?id=CVE-2026-52061)
 - **GHSA ID:** [GHSA-pfr9-hqr2-78rq](https://github.com/cesanta/mongoose/security/advisories/GHSA-pfr9-hqr2-78rq)
-- **Reported:** 2026-XX-XX
+- **Reported:** 2026-04-27
 - **Published:** 2026-08-12
 - **Severity:** High (CVSS 7.5 – CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H)
 - **Vulnerability type:** Out-of-bounds read, Denial of Service (DoS), Service crash
